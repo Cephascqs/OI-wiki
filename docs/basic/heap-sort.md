@@ -1,3 +1,4 @@
+auther:149248026
 本页面将简要介绍堆排序。
 
 ## 定义
@@ -52,11 +53,11 @@ iRightChild(i) = 2 * i + 2;
       int child = parent * 2 + 1;
       while (child <= end) {  // 子结点下标在范围内才做比较
         // 先比较两个子结点大小，选择最大的
-        if (child + 1 <= end && arr[child] < arr[child + 1]) child++;
+        if (child + 1 <= end && arr[child] < arr[child + 1]) child++; // 更改最大节点
         // 如果父结点比子结点大，代表调整完毕，直接跳出函数
         if (arr[parent] >= arr[child])
           return;
-        else {  // 否则交换父子内容，子结点再和孙结点比较
+        else {  // 否则交换父子内容，子结点再和孙结点比较，往复循环
           swap(arr[parent], arr[child]);
           parent = child;
           child = parent * 2 + 1;
